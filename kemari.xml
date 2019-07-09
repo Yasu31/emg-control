@@ -1,0 +1,11 @@
+<mujoco model="EMG-puppet model + ball that can be played with">
+  <include file="./model_meta.xml"/>
+  <worldbody>
+    <include file="./model_body.xml"/>
+    <body name="ball" pos="0.2 0 1">
+      <joint type="slide" limited="true" range="-1.5 1" axis="0 0 1"/>
+      <joint type="slide" limited="true" range="-1 1" axis="1 0 0"/>
+      <geom type="sphere" size="0.05" rgba="1 0.4 0.4 1"/>
+    </body>
+  </worldbody>
+</mujoco>

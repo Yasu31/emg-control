@@ -1,0 +1,6 @@
+<mujoco model="EMG-puppet model">
+  <include file="./model_meta.xml"/>
+  <worldbody>
+    <include file="./model_body.xml"/>
+  </worldbody>
+</mujoco>

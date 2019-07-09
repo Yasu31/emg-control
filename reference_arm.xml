@@ -1,0 +1,10 @@
+<mujoco model="EMG-puppet model + reference arm to test control tracking accuracy">
+  <include file="./model_meta.xml"/>
+  <worldbody>
+    <include file="./model_body.xml"/>
+    <body name="reference_arm" pos="0 0.1 0">
+      <joint axis="0 1 0" limited="true" range="-90 85"/>
+      <geom type="capsule" fromto="0 0 0 0.5 0 0" size="0.03 0.03" rgba="1 0.4 0.4 1"/>
+    </body>
+  </worldbody>
+</mujoco>
