@@ -2,10 +2,12 @@
   <include file="./model_meta.xml"/>
   <worldbody>
     <include file="./model_body.xml"/>
-    <body name="ball" pos="0.2 0 1">
-      <joint type="slide" limited="true" range="-1.5 1" axis="0 0 1"/>
-      <joint type="slide" limited="true" range="-1 1" axis="1 0 0"/>
-      <geom type="sphere" size="0.05" rgba="1 0.4 0.4 1"/>
+    <body name="ball" pos="0.3 0 1">
+      <joint type="free"/>
+      <geom name="ball" type="sphere" size="0.03" rgba="1 0.4 0.4 1" solref="-10000 0.00"/>
+    </body>
+    <body name="wall" pos="1 0 0">
+      <geom type="box" size="0.01 0.2 1"/>
     </body>
   </worldbody>
 </mujoco>

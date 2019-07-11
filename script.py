@@ -59,6 +59,15 @@ while not rospy.is_shutdown():
         js.name.append("reference")
         js.position.append(-ref_angle)
         sim.forward()
+    if mode == KEMARI_MODE:
+        if sim.data.qpos[3] < -1:
+            rospy.loginfo("ball fell to floor, so returning to original position...")
+            sim.data.qpos[1] = 0.3
+            sim.data.qpos[2] = 0
+            sim.data.qpos[3] = 1
+            for i in range(6):
+                sim.data.qvel[i+1] = 0
+            sim.forward()
     js.name.append("puppet")
     js.position.append(-sim.data.qpos[0]*180/3.14)
 
